@@ -1,0 +1,15 @@
+Library/
+Temp/
+Obj/
+Xcode/
+Builds/
+Screenshots/
+VSdoc/
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.booproj
