@@ -14,7 +14,7 @@ namespace Assets.GameAssistant.Scripts
         public TextAsset PreloadedDataRussian;
 
         /// <summary>
-        /// Demonstrates assistant functionality
+        /// Demonstrates Assistant functionality
         /// </summary>
         public void Ask()
         {
@@ -22,19 +22,19 @@ namespace Assets.GameAssistant.Scripts
             string sheedId;
             string preloadedCsv = null;
 
-            switch (Application.systemLanguage)
+            switch (Application.systemLanguage) // You must assign different sheedId values (coresponding to player language) to use different localized FAQ sheets
             {
-                case SystemLanguage.Russian:
-                    sheedId = "2082792765";
-                    if (PreloadedDataEnglish != null) preloadedCsv = PreloadedDataEnglish.text;
-                    break;
+                //case SystemLanguage.Russian:
+                //    sheedId = "2082792765";
+                //    if (PreloadedDataEnglish != null) preloadedCsv = PreloadedDataEnglish.text;
+                //    break;
                 default:
                     sheedId = "0";
                     if (PreloadedDataEnglish != null) preloadedCsv = PreloadedDataRussian.text;
                     break;
             }
 
-            Question.text = "...";
+            Answer.text = "...";
 
             var assistant = new Assistant(tableId, sheedId, preloadedCsv);
 
